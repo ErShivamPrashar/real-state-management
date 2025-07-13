@@ -68,13 +68,30 @@
     }
 
     .login-container .options a {
-      color: #007bff;
+      color: white
       text-decoration: none;
     }
 
     .login-container .options a:hover {
       text-decoration: underline;
     }
+    span{
+      color: #007bff;
+    }
+    
+ .button {
+      width: 100%;
+      padding: 10px;
+   background-color: #28a745;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 100px;
+      text-decoration: none;
+    }
+
 
     .login-container p {
       text-align: center;
@@ -83,7 +100,8 @@
     }
 
     .login-container p a {
-      color: #007bff;
+        color: white;
+
       text-decoration: none;
     }
   </style>
@@ -95,7 +113,8 @@
     <form action="home.html" method="POST">
       <input type="text" name="username" placeholder="Username" required>
       <input type="password" name="password" placeholder="Password" required>
-      <button type="submit">Login</button>
+       <a class="button" href="home.html">Login</a>
+
     </form>
 
     <div class="options">
