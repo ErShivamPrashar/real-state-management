@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book 2BHK Flat</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/form.js" defer></script>
+</head>
+<style>
+  /* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #e0eafc, #cfdef3);
+  color: #333;
+}
+
+header {
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+header p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+/* Layout */
+.booking-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px 20px;
+}
+
+/* Info & Form Card Design */
+.flat-info,
+.booking-form {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 100%;
+  max-width: 450px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.flat-info:hover,
+.booking-form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Info Section */
+.flat-info h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.flat-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.flat-info li {
+  font-size: 1.1rem;
+  margin: 12px 0;
+  padding-left: 25px;
+  position: relative;
+}
+
+.flat-info li::before {
+  content: '✔️';
+  position: absolute;
+  left: 0;
+}
+
+/* Form Section */
+.booking-form h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.booking-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-form label {
+  font-weight: 500;
+  margin: 10px 0 5px;
+}
+
+.booking-form input {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f1f1f1;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.booking-form input:focus {
+  outline: none;
+  background-color: #e6f0ff;
+}
+
+.booking-form button {
+  margin-top: 20px;
+  padding: 14px;
+  background: linear-gradient(to right, #43e97b, #38f9d7);
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.4s, transform 0.2s;
+}
+
+.booking-form button:hover {
+  background: linear-gradient(to right, #38f9d7, #43e97b);
+  transform: scale(1.02);
+}
+
+.success-message {
+  margin-top: 15px;
+  color: green;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .booking-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .flat-info,
+  .booking-form {
+    width: 90%;
+  }
+}
+
+
+</style>
+<body>
+  <header>
+    <h1>Book Your 2BHK Flat</h1>
+    <p>950 sq.ft | ₹45 Lakh | Prime City Area</p>
+  </header>
+
+  <main class="booking-container">
+    <section class="flat-info">
+      <h2>Flat Highlights</h2>
+      <ul>
+        <li>🛏️ 2 Bedrooms</li>
+        <li>🛁 2 Bathrooms</li>
+        <li>🍽️ Modular Kitchen</li>
+        <li>🌳 2 Balconies</li>
+        <li>🧱 Area: 950 sq.ft</li>
+        <li>💰 Price: ₹45 Lakh</li>
+      </ul>
+    </section>
+
+    <section class="booking-form">
+      <h2>Booking Form</h2>
+      <form id="bookingForm" action="/flatedetail">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="date">Preferred Visit Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <button type="submit">Book Now</button>
+        <p id="successMsg" class="success-message"></p>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('bookingForm');
+  const successMsg = document.getElementById('successMsg');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Get form data (optional for future backend use)
+    const name = form.name.value;
+    const phone = form.phone.value;
+    const email = form.email.value;
+    const date = form.date.value;
+
+    // Simulate booking success
+    successMsg.textContent = `Thank you, ${name}! Your flat visit is booked for ${date}.`;
+    
+    form.reset(); // Clear the form
+  });
+});
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FlatEase | Flat Management System</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <style>
+        /* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+
+}
+
+/* Header */
+header {
+  background-color: #003366;
+  padding: 20px 0;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+header nav {
+  float: right;
+
+}
+
+nav a {
+  color: white;
+  margin-left: 20px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #00c6ff;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: white;
+  padding: 80px 0;
+  text-align: center;
+  border-radius: 0 0 50px 50px;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.primary {
+  background-color: #28a745;
+  color: white;
+}
+
+.secondary {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+/* Sections */
+section {
+  padding: 60px 0;
+}
+
+/* About & Contact */
+.about, .contact {
+  background-color: #ffffff;
+}
+
+.about p, .contact p {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  font-size: 17px;
+}
+
+/* Features */
+.features {
+  background-color: #eaf1f8;
+}
+
+.features h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-left: 5px solid #007bff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Login */
+.login {
+  background-color: #fefefe;
+}
+
+.login form {
+  max-width: 400px;
+  margin: auto;
+  background: #f4f4f4;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.login input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login label {
+  font-weight: 600;
+  display: block;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav {
+    float: none;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .btn {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    </style>
+  <header>
+    <div class="container">
+      <div class="main">
+        <div class="logo">🏢 Real Estate</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="#about">About</a>
+        <a href="#features">Services</a>
+        <a href="register.html">Register</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      </div>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="container">
+      <h1>FlatEase - Smart Flat Management System</h1>
+      <p>Manage tenants, bills, maintenance and more from one dashboard.</p>
+      <a class="btn primary" href="register.html">Get Started</a>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About FlatEase</h2>
+      <p>
+        FlatEase is a complete solution for flat/apartment residents and society managers. 
+        It simplifies monthly rent management, tenant tracking, service requests, 
+        and community updates with a centralized online portal.
+      </p>
+    </div>
+  </section>
+
+  <section id="features" class="features">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>🏠 Flat Tracking</h3>
+          <p>Manage all flats, occupancy, and ownership records.</p>
+        </div>
+        <div class="card">
+          <h3>💳 Rent & Dues</h3>
+          <p>Collect and manage rent, maintenance fees, and late payments online.</p>
+        </div>
+        <div class="card">
+          <h3>📢 Announcements</h3>
+          <p>Post notices for residents like water cuts or events instantly.</p>
+        </div>
+        <div class="card">
+          <h3>🛠 Service Requests</h3>
+          <p>Allow residents to raise complaints or service requests online.</p>
+        </div>
+        <div class="card">
+          <h3>📈 Dashboard</h3>
+          <p>Get insights into dues, payments, and occupancy status.</p>
+        </div>
+        <div class="card">
+          <h3>🔐 Secure Login</h3>
+          <p>Separate admin and resident logins with secure access control.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>Email: support@flatease.com | Phone: +91 98765 43210</p>
+      <p>Address: 3rd Floor, Smart Society Complex, New Delhi, India</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 FlatEase. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
